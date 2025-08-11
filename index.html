@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for Abstracts - 2da Mini-Jornada Científica Virología-ICS 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(52, 152, 219, 0.05) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .info-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3498db, #2c3e50);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-left: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #3498db;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .highlight-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid #eee;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="header-content">
+                    <h1 class="title">Call for Abstracts</h1>
+                    <p class="subtitle">2da Mini-Jornada Científica Virología-ICS 2025</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2 class="section-title">🔬 Convocatoria para Desarrollo de Investigación</h2>
+                    <div class="info-card">
+                        <h3>Formación de Equipos de Investigación</h3>
+                        <p>Convocamos a profesionales interesados en <strong>desarrollar proyectos de investigación colaborativos</strong> desde la conceptualización hasta la presentación final. Los participantes trabajarán en equipo para diseñar, ejecutar y presentar investigaciones originales siguiendo la metodología <strong>AMRD (Abstract, Methods, Results, Discussion)</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">👥 Dirigido a</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Personal del Instituto de Ciencias</h3>
+                            <p>Investigadores, docentes y estudiantes del ICS</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Departamento de Virología del CNDR-MINSA</h3>
+                            <p>Profesionales y técnicos especializados en virología</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📅 Cronograma de Actividades</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Agosto 2025</div>
+                            <p><strong>Fase de Conceptualización:</strong> Formulación de ideas, evaluación de viabilidad, verificación de disponibilidad de datos, revisión de bases de datos existentes y creación de dataset maestro.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Septiembre - Octubre 2025</div>
+                            <p><strong>Fase de Análisis:</strong> Análisis de datos y desarrollo de resultados. Implementación de metodologías estadísticas y generación de hallazgos preliminares.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Noviembre 2025</div>
+                            <p><strong>Evento Principal:</strong> Presentación de trabajos en la 2da Mini-Jornada Científica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">🎯 Áreas Temáticas de Investigación</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Virología</h3>
+                            <p>Estudios sobre patogénesis viral, resistencia, evolución molecular y caracterización de nuevas cepas virales</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Epidemiología</h3>
+                            <p>Análisis de brotes, vigilancia epidemiológica, modelos predictivos y estudios de transmisión</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Aplicaciones Diagnósticas</h3>
+                            <p>Desarrollo y validación de métodos diagnósticos, evaluación de pruebas y tecnologías emergentes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎓 Capacitación Incluida</h3>
+                    <p><strong>Para participantes que requieran nivelación:</strong><br>
+                    "Análisis Básico de R para Análisis de Datos"<br>
+                    6 encuentros • 2 veces por semana<br>
+                    <em>Dirigido a equipos que necesiten fortalecer sus competencias en análisis estadístico</em></p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">📋 Información para Participantes</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Metodología de Investigación</h3>
+                            <p>• <strong>Formato AMRD:</strong> Abstract, Methods, Results, Discussion<br>
+                            • Desarrollo colaborativo desde la conceptualización<br>
+                            • Acompañamiento técnico durante todo el proceso</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Modalidad de Presentación</h3>
+                            <p>• <strong>Presentación Oral</strong> de resultados finales<br>
+                            • Abstract final siguiendo formato AMRD<br>
+                            • Duración: Por confirmar</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Fechas Importantes</h3>
+                            <p>• <strong>Inscripción de interés:</strong> Hasta Octubre 2025<br>
+                            • <strong>Formación de equipos:</strong> Agosto 2025<br>
+                            • <strong>Presentaciones finales:</strong> Noviembre 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="contact-info">
+                    <h3>📧 Coordinación y Contacto</h3>
+                    <p>Para consultas sobre participación y formación de equipos de investigación:<br>
+                    <strong>Gerald Vásquez</strong> | <strong>Elsa Videa</strong><br>
+                    <em>Coordinadores Académicos</em><br>
+                    Email: [Por completar] | Teléfono: [Por completar]</p>
+                </div>
+            <div class="footer">
+                <p>© 2025 Instituto de Ciencias - Departamento de Virología CNDR-MINSA</p>
+                <p>2da Mini-Jornada Científica Virología-ICS 2025</p>
+                <p><em>"Desarrollando investigación colaborativa desde la idea hasta la presentación"</em></p>
+            </div>
+        // Animación de entrada para las secciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Efecto parallax suave en el header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            header.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
